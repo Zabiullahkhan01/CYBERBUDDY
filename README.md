@@ -1,6 +1,8 @@
 
 # 🛡️ CyberBuddy
 
+![License: Non-Commercial](https://img.shields.io/badge/license-Non--Commercial-lightgrey.svg)
+
 > **CyberBuddy** is an interactive cybersecurity awareness website built to educate users on various types of cyber attacks and how to defend against them using **realistic simulations**, **gamified learning**, and **interactive choices**.
 
 ---
