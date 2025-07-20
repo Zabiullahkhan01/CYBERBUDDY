@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: border-box;
+ }
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+    margin: 30px;
+}
+#scoreboard {
+    margin: 30px;
+    width: 80vw;
+    display: flex;
+    gap: 30px;
+}
+.score_content{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(50% - 40px); 
+    padding: 20px;
+    text-align: center;
+    color: #007bff;
+  
+}
+#total-score ,#quizzes-taken{
+   text-align: center;
+   margin: 20px;
+   color: #333;
+}
+.score_content:hover{
+    background-color: rgb(154, 200, 205);
+   /* font-size: 1.3rem; */
+   transition: 400ms;
+   transition-delay: 100ms;
+   transform: translateY(-10px);
+
+}
+
+#start-quiz-btn{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: medium;
+    
+}
+
+/* form part edit krte hai */
+
+.hidden {
+    display: none;
+}
+.hide{
+    display: none;
+}
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 40px); 
+    background-color: #fff;
+    margin: 30px;
+    margin-bottom: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.question {
+    margin-bottom: 10px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.option {
+    margin: 5px 0;
+    font-weight: lighter;
+    line-height: 20px;
+}
+
+#result {
+    margin-top: 20px; 
+}
+
+#submit-quiz-btn{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+} 
+#close-quiz-btn{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+}
+.leaderboard h1{
+    margin-bottom: 80px;
+}

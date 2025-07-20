@@ -1,0 +1,14 @@
+body {
+    opacity: 0.1;
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in and fade-out transition */
+}
+
+body.fade-in {
+    opacity: 1;
+    
+}
+
+body.fade-out {
+    opacity: 0.1;
+    /* background-color: rgb(202, 218, 232); */
+}

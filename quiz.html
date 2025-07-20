@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="transition.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header >
+        <div class="header">
+        <a href="index.html" class="smooth-transition .fade-out .page-transition" ><div id="logo"><img src="logo.png" alt="err" height="60px" width="150px"></div></a>
+        <a href="index.html" class="smooth-transition .fade-out .page-transition"> <div id="home" ><i class="fa-solid fa-house-chimney"></i><p>Home</p></div> </a>
+        <a href="explore.html" class="smooth-transition .fade-out .page-transition"><div id="explore"><i class="fa-solid fa-compass"></i><p>Explore</p></div> </a>
+        <a href="quiz.html" class="smooth-transition .fade-out .page-transition"><div id="quizz"><i class="fa-solid fa-crown"></i><p>quiz</p></div></a> 
+        <a href="support.html" class="smooth-transition .fade-out .page-transition"><div id="contact"><i class="fa-solid fa-headset"></i><p>support</p></div> </a>
+        <a href="#"><div id="search"><input placeholder="search"></div> </a>
+        </div>
+    </header>
+    <div class="spacer"></div>
+    
+            <h1>DASHBOARD</h1>
+            <div id="scoreboard">
+                
+                <div class="score_content"><Total><h1>Total Score <p id="total-score">0</p></h1></div>
+                <div class="score_content"><h1>Quizzes Taken <p id="quizzes-taken">0</p></h1></div>
+            </div>
+            <div id="start-quiz-button"><button id="start-quiz-btn">Take a Quiz</button></div> 
+
+            <div id="quiz-container" class="hidden">
+                <form id="quiz" ></form>
+                
+                    <div id="submit-quiz"><button id="submit-quiz-btn" class="hidden">Submit Quiz</button></div> 
+                    <div id="close-quiz"><button id="close-quiz-btn" class="hide">Close Quiz</button></div>
+            
+            </div>
+
+            <div id="result" class="hidden">
+                <p>Your Score: <span id="score">0</span></p>
+                <div id="correct-answers"></div>
+            </div>
+            <div class="leaderboard">
+                    <h1>LEADERBOARD</h1>
+            </div>
+     
+
+   
+   
+    <footer id="footer">
+           
+        <div class="footer-content">
+            <div id="author">Made by-Zabiullah Khan</div>
+            <p>Follow us on:</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/LDgzNuQYtNRz5GDP/?mibextid=qi2Omg" target="_blank" title="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com/Zabii_2002" target="_blank" title="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/zabiullah_2002?igsh=ZHZxZXljanZ3NWJv target="_blank" title="Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+                <a href="http://www.youtube.com/@khabylameofficial363" target="_blank" title="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                
+            </div>
+            <div id="copyright"><i class="fa-regular fa-copyright"></i><span>2024-Cyber Buddy </span></div>
+        </div>
+    </footer>
+  
+    <script src="quiz.js"></script>
+    <script src="transition.js"></script>
+</body>
+</html>

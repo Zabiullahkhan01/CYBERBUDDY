@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Simulation</title>
+    <link rel="stylesheet" href="phising.css">
+</head>
+<body>
+    <div class="email-container">
+        <h2>📧 Your Inbox</h2>
+        <div class="email">
+            <img src="" alt="err">
+            <p><strong>From:</strong> <span class="from">mahabank@gmail.com</span></p>
+            <p><strong>Subject:</strong> Important Account Information</p>
+            <p><strong>Message:</strong></p>
+            <p>Hello,</p>
+            <p>We have detected unusual activity on your account. To protect your information, please verify your account by clicking the link below:</p>
+            <a href="#" id="ignoree" class="suspicious-link">http://www.a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9<br>d0e1f2g3h4i5j6k7l8m9n0o1p2q3r4s5t6u7v8w9x0y1z2a3b4c5d6e7f8g9h0ijklmno<br>qrstuvwxyz9876543210abcdefg1234567890abcdefg1234567890abcdefg</a>
+            <p>Thank you,<br>Bank of the World Support</p>
+        </div>
+        <div class="actions">
+            <button id="report-phishing">Report Phishing</button>
+        </div>
+    </div>
+    <div id="feedback1" class="hidden">
+        <strong>Correct! This is a phishing email. The link is suspicious and the sender's address looks off</strong>
+        <p>KEY POINTS TO CONSIDER:</p>
+        <ol type="1">
+            <li>logo of the sender</li>
+            <li>Gmail address of the sender</li>
+            <li>size of link and text visible on the link</li>
+        </ol>
+    </div>
+    <div id="feedback2" class="hidden">
+        <h3><strong>Uoo-ooh! You Clicked a suspicious phishing email. Your sensitive data might be breached</strong></h3>
+        <h3>💡 What Actions You Can Take Now!!!:</h3>
+        <ol type="1">
+          <li id="act1"><strong>Change Passwords Immediately:</strong> 
+            <ul>
+                <li>Change the passwords of all accounts that may have been compromised, especially for sensitive accounts like email, banking, and social media.</li>
+                <li>Use strong, unique passwords and consider using a password manager.</li>
+            </ul>
+          </li>
+          <li id="act2"><strong>Enable Two-Factor Authentication (2FA):</strong> 
+            <ul>
+                <li>Activate two-factor authentication (2FA) on all important accounts to add an extra layer of security.</li>
+                <li>This will require both your password and a second factor (like a code sent to your phone) to log in.</li>
+            </ul>
+          </li>
+          <li id="act3"><strong>Monitor Financial Accounts:</strong> 
+             <ul>
+                <li>Check your bank accounts, credit cards, and other financial accounts for any unauthorized transactions.</li>
+                <li>Notify your bank or financial institution immediately if you notice suspicious activity.</li>
+             </ul>
+         </li>
+          <li id="act4"><strong>Scan Your Device for Malware:</strong> 
+             <ul>
+                <li>Run a full scan using a trusted antivirus or anti-malware tool to ensure no malware or keyloggers were installed during the phishing attack.</li>
+             </ul>
+         </li>
+         <li id="act5"><strong>Report the Phishing Incident:</strong> 
+            <ul>
+                <li>Report the phishing email or link to the appropriate service providers (e.g., your email provider, bank, or the company being impersonated).</li>
+                <li>If you opened link on office system Inform your organization’s IT team (if relevant) to ensure others aren’t affected.</li>
+            </ul>
+        </li>
+        <li id="act6"><strong>Watch for Follow-up Attacks:</strong> 
+            <ul>
+                <li>Be cautious of follow-up phishing attempts, as attackers may try again using the information they have obtained.</li>
+                <li>Be especially vigilant with unsolicited emails or requests for more information.</li>
+            </ul>
+        </li>
+        <li id="act6"><strong>Consider Temporary Freezing Credit:</strong> 
+            <ul>
+                <li>If sensitive financial data was compromised, consider placing a credit freeze or fraud alert on your accounts to prevent identity theft.</li>
+            </ul>
+        </li>
+           <li id="act6"><strong>Future Precautions:</strong>
+            <ol type="1">
+                <li>Check logo of the sender</li>
+                <li>Check Gmail address of the sender</li>
+                <li>Check size of link(avoid clicking if too long) and text visible on the link(avoid clicking if gibberish text)</li>
+            </ol> 
+          </li>
+        </ol>
+        <br>
+        <h3>💡 Tips To Avoid Future Phishing Attacks:</h3>
+        <ol type="a">
+          <li><strong>Be Wary of Suspicious Emails and Links:</strong>
+            <ul>
+               <li>Don’t click on links or download attachments from untrusted or unexpected sources.</li>
+           </ul>
+          </li>
+          <li><strong>Verify the Sender’s Identity:</strong> 
+            <ul>
+              <li>Always verify the sender's email address, especially if the message seems urgent or asks for personal information.</li>
+            </ul>
+          </li>
+          <li><strong>Check for HTTPS:</strong>
+            <ul>
+              <li>Only enter sensitive information on websites with secure connections (https://) and legitimate domains.</li>
+            </ul>
+          </li>
+          <li><strong>Enable Two-Factor Authentication (2FA):</strong>
+            <ul>
+              <li>Use 2FA to add an extra layer of security, making it harder for attackers to access your accounts.</li>
+            </ul>
+          </li>
+          <li><strong>Use Anti-Phishing Toolbars and Email Filters:</strong>
+            <ul>
+              <li>Install anti-phishing toolbars and enable email filters to automatically block malicious content.</li>
+            </ul>
+            <li><strong>Keep Software Updated:)</strong>
+                <ul>
+                  <li>Regularly update your browser, operating system, and antivirus software to patch vulnerabilities.</li>
+                </ul>
+              </li>
+          </li>
+        </ol>
+    </div>
+    <footer>
+        <button onclick="restartSimulation()" id="restart" class="alert-btn">Restart Simulation</button><br>
+        <a href="../explore.html"><button id="HOME" >HOME</button></a><br>
+    </footer>
+    <script src="phising.js"></script>
+</body>
+</html>

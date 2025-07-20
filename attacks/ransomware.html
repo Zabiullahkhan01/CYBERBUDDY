@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ransomware Attack Simulation</title>
+  <link rel="stylesheet" href="ransomware.css">
+</head>
+<body>
+  <!-- Pop-up Message Section -->
+  <div id="popup-section" class="popup fade-in">
+    <h2>🚨 Important Notification 🚨</h2>
+    <p>Your HR department has sent you a new document regarding your salary increment. Please review it as soon as possible to proceed with the next steps.</p>
+    <button id="open-email" class="primary-btn">Review Documents</button>
+  </div>
+
+  <!-- Gmail-like Email Interface -->
+  <div id="email-section" style="display:none;" class="fade-in">
+    <h2>📧 Your Inbox</h2>
+    <p><b>From: HR@company.com</b></p>
+    <p><b>Subject: Salary Update - Please review the attached document</b></p>
+    <p>Message: We are pleased to inform you that your salary increment has been approved. Kindly review the attached document to confirm the details.</p>
+    <p><b>Attachment: <span class="attachment">Salary_Details.pdf</span></b></p>
+    <button id="open-attachment" class="primary-btn">Open Attachment</button>
+    <button id="ignore-email" class="secondary-btn">Ignore Email</button>
+    <div id="email-feedback" class="info-message"></div>
+    <div id="tip-section" class="tip-message"></div>
+  </div>
+
+  <!-- File Encryption Progress Section -->
+  <div id="file-encryption" style="display:none;" class="fade-in">
+    <h2>🔒 Encrypting Files...</h2>
+    <p>Your files are being encrypted. This process is irreversible unless you pay the ransom.</p>
+    <div id="file-icons">
+      <div class="file-item">
+        <img class="clickableImage"  src="folder-icon.png" alt="Clickable Image 1" style="width: 60px;">
+        <p id="file1">📁 Documents</p>
+        <p id="hiddenText">This file is encrypted.</p>
+      </div>
+      <div class="file-item">
+        <img class="clickableImage" data-id="2" src="pdf.png" alt="Clickable Image 2" style="width: 60px;">
+        <p id="file2">📄 cyber.pdf</p>
+        <p id="hiddenText">This file is encrypted.</p>
+      </div>
+      <div class="file-item">
+        <img class="clickableImage" data-id="3" src="zip.png" alt="Clickable Image 3" style="width: 60px;">
+        <p id="file3">📄 project.zip</p>
+      </div>
+      <div class="file-item">
+        <img class="clickableImage" data-id="4" src="ppt.png" alt="Clickable Image 4" style="width: 60px;">
+        <p id="file4">📄 Work_Presentation.ppt</p>
+      </div>
+      <div class="file-item">
+        <img class="clickableImage" data-id="5" src="excel.png" alt="Clickable Image 5" style="width: 60px;">
+        <p id="file5">📄 Sales_data.xlsx</p>
+      </div>
+    </div>
+    <div id="encryption-status" class="info-message"></div>
+  </div>
+
+  <!-- Ransom Alert -->
+  <div id="ransom-alert" style="display:none;" class="alert fade-in">
+    <h2 style="color: red; font-size: 30px;">🚨 All Files Encrypted!</h2>
+    <p style="font-size: 18px;">Your files have been encrypted by a ransomware attack. To regain access, you must pay <strong>500 BTC</strong> (Bitcoin).</p>
+    <p style="font-size: 16px;"><b>Payment Address:</b> <span style="color: green;">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span></p>
+    <button id="pay-ransom" class="alert-btn">💰 Pay Ransom</button>
+    <button id="restore-backup" class="alert-btn">🔄 Restore Backup</button>
+    <div id="ransom-feedback" class="info-message"></div>
+  </div>
+
+  <!-- Tips Section -->
+  <div id="tips-section">
+    <h3>💡 Tips:</h3>
+    <ul>
+      <li id="tip1"><strong>Pop-Up:</strong> Always verify notifications before clicking.</li>
+      <li id="tip2" style="display:none;"><strong>Email:</strong> Avoid opening attachments from unknown senders.</li>
+      <li id="tip3" style="display:none;"><strong>File Encryption:</strong> Regularly back up important files to a secure location.</li>
+      <li id="tip4" style="display:none;"><strong>Ransomware:</strong> If attacked, do not pay the ransom; report to authorities instead.</li>
+    </ul>
+  </div>
+
+
+
+  <!-- Actions to be taken -->
+
+  <div id="action-section" style="display: none;">
+    <h3>💡 What Actions You Can Take Now!!!:</h3>
+    <ol type="1">
+      <li id="act1"><strong>Isolate Infected Systems:</strong> Immediately disconnect the infected computer from the network (unplug Ethernet or disable Wi-Fi).
+        Isolate other connected devices to prevent the ransomware from spreading.</li>
+      <li id="act2"><strong>Power Down Uninfected Systems:</strong> If possible, power down other systems not yet impacted to stop the ransomware from reaching them.</li>
+      <li id="act3"><strong>Boot into Safe Mode:</strong> Restart the infected system in Safe Mode to prevent the ransomware from loading, and use a reliable anti-malware tool to scan and remove it.</li>
+      <li id="act4"><strong>Check for Free Decryption Tools:</strong> Some ransomware has been cracked, and free decryption tools may exist. Websites like No More Ransom offer free tools for certain ransomware strains.</li>
+      <li id="act5"><strong>Run Anti-Malware and Antivirus Tools:</strong> Use reputable antivirus or anti-malware software to detect and remove the ransomware.
+        Tools like Malwarebytes, Kaspersky Ransomware Decryptor, or Windows Defender can help remove certain types of ransomware.</li>
+       <li id="act6"><strong>Prevent Future Attacks:</strong> <ul>
+        <li>Patch vulnerabilities: Ensure all software, operating systems, and apps are up-to-date.</li>
+        <li>Enable multi-factor authentication (MFA) for accounts and systems.</li>
+        <li> Regularly back up data: Store backups in isolated, offline locations (e.g., external drives or cloud services not directly connected to your network).</li>
+        <li>Educate employees: Raise awareness about phishing attacks and malicious downloads.</li>
+       </ul></li>
+    </ol>
+    <h3>💡 Some Commands That can be Helpful:</h3>
+    <ol type="a">
+      <li><strong>Check for Active Processes and Terminate Ransomware:</strong>
+        <ol type="1">
+           <li>Use <b>Task Manager</b> or the <b>"tasklist"</b> command to identify suspicious processes.</li>
+            <li>Then, use the taskkill command to stop any ransomware-related processes</li>
+       </ol>
+      </li>
+      <li><strong>Boot into Safe Mode (Windows):</strong> Boot into Safe Mode to prevent the ransomware from executing
+        <ol type="1">
+          <li>Long Press Shift while selecting "Restart" from the Start menu.</li>
+          <li>Navigate to Troubleshoot > Advanced options > Startup Settings and press F4 to enter Safe Mode.</li>
+        </ol>
+      </li>
+      <li><strong>Check Recent Files or Changes:</strong>
+        <ul>
+          <li>Use the <b>"dir"</b> or <b>"ls"</b> command to check for newly created or modified files</li>
+        </ul>
+      </li>
+      <li><strong>Disable Startup Programs:</strong> You can disable suspicious startup programs using msconfig
+        <ol type="1">
+          <li>Press Win + R, type msconfig, and go to the Startup tab.</li>
+          <li>Disable suspicious programs that might run the ransomware.</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+
+
+
+
+
+  <div id="popup-key" class="pooopup">
+    <p>Enter the key to view:</p>
+    <input type="text" id="input-key" placeholder="Enter key">
+    <button id="submit-key">Submit</button>
+  </div>
+  <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+  
+  <footer>
+    <button onclick="restartSimulation()" id="restart" class="alert-btn">Restart Simulation</button><br>
+    <a href="../explore.html"><button id="HOME" class="alert-btn">HOME</button></a><br>
+  </footer>
+<script>
+    // Variables
+    const images = document.querySelectorAll('.clickableImage');
+    const popupKey = document.getElementById('popup-key');
+    const submitKeyButton = document.getElementById('submit-key');
+    const inputKey = document.getElementById('input-key');
+    const overlay = document.getElementById('overlay');
+    let activeImageId = null; // Track which image was clicked
+
+    // Show pop-up when an image is clicked
+    images.forEach(function(image) {
+      image.addEventListener('click', function() {
+        activeImageId = image.getAttribute('data-id'); // Store the clicked image's data-id
+        popupKey.style.display = 'block'; // Show the pop-up
+        overlay.style.display = 'block'; // Show overlay to disable background
+      });
+    });
+
+    // Function to handle key submission
+    submitKeyButton.addEventListener('click', function() {
+      const enteredKey = inputKey.value;
+
+      // Check if the entered key matches a condition (optional)
+      if (enteredKey === "Zabi12345") {  // Change "secret-key" to your desired key
+        alert("Key is correct! You can now view the content.");
+        popupKey.style.display = 'none'; // Hide the pop-up
+        overlay.style.display = 'none'; // Hide the overlay
+        inputKey.value = ''; // Clear the input field
+      } else {
+        alert("Incorrect key, please try again.");
+        inputKey.value = '';
+      }
+    });
+
+    // Hide the pop-up and overlay if the user clicks outside the pop-up
+    overlay.addEventListener('click', function() {
+      popupKey.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+  <script src="ransomware.js"></script>
+</body>
+</html>

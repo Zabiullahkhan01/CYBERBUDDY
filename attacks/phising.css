@@ -1,0 +1,91 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.email-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.email {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    
+}
+
+.email p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.email .suspicious-link {
+    color: #d9534f;
+    text-decoration: underline;
+}
+
+.actions {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+#feedback1 ,#feedback2{
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    line-height: 30px;
+    padding: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+#feedback1.success {
+    background-color: #fff;
+    color: #0b0b0b;
+}
+
+#feedback2.error {
+    background-color: #fff;
+    color: #0b0b0b;
+}
+footer{
+    height: 10vw;
+    width: 100dvw;
+    position: sticky;
+   z-index: 0;
+   font-weight: bolder;
+    margin: 0px;
+   text-align: center;
+   padding: 10px ;
+ }

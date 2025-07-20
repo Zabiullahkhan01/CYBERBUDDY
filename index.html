@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="transition.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body>
+ 
+            <header >
+                <div class="header">
+                <div id="profile_menu" onclick="toggleLoginForm()"><i class="fa-solid fa-bars"></i></div>            
+                <a href="index.html" class="smooth-transition .fade-out .page-transition" ><div id="logo"><img src="logo.png" alt="err" height="60px" width="150px"></div></a>
+                <a href="index.html" class="smooth-transition .fade-out .page-transition"> <div id="home" ><i class="fa-solid fa-house-chimney"></i><p>Home</p></div> </a>
+                <a href="explore.html" class="smooth-transition .fade-out .page-transition"><div id="explore"><i class="fa-solid fa-compass"></i><p>Explore</p></div> </a>
+                <a href="quiz.html" class="smooth-transition .fade-out .page-transition"><div id="quizz"><i class="fa-solid fa-crown"></i><p>quiz</p></div></a> 
+                <a href="support.html" class="smooth-transition .fade-out .page-transition"><div id="contact"><i class="fa-solid fa-headset"></i><p>support</p></div> </a>
+                <a href="#"><div id="search"><input placeholder="search"></div> </a>
+                </div>
+            </header>
+            <div class="spacer"></div>
+            <div id="main">
+                    <h1 id="heading-top">Empower Yourself with Cybersecurity Awareness</h1>
+                    <h2 id="slogan">Learn, Play, and Protect – Your Journey to Becoming Cyber Aware Starts Here!</h2>
+                    <div class="typewriter"> <p id="intro">In a world where digital threats are constantly evolving, cybersecurity is no longer just an option—it's a necessity. Our platform is your ultimate defense, empowering individuals and organizations to stay ahead of cybercriminals. With a robust, interactive learning experience that blends cutting-edge theory with hands-on practice, we equip you with the tools and knowledge to protect what matters most. Whether you're an individual striving to safeguard your personal information or an organization committed to fortifying your workforce, our comprehensive training is designed to elevate your cybersecurity posture and ensure you're always one step ahead..</p>
+                    </div>
+                <h2 id="sub-heading-1">Features of CYBER-BUDDY</h2>
+                <div class="sub_head">
+                    <div id="features">
+                        <div id="f1" class="features-design">
+                            <h3>Interactive Modules</h3>
+                            <p>"Engage in hands-on training that’s designed to help you master the basics of cybersecurity. Learn at your own pace with interactive lessons that are both informative and engaging."
+                            </p>
+                        </div>
+                        <div id="f2" class="features-design">
+                            <h3>Gamified Learning </h3>
+                        <p>"Earn points, unlock badges, and climb the leaderboard as you complete modules and quizzes. Our gamified approach keeps you motivated and makes learning fun."
+                        </p>
+                        </div>
+                        <div id="f3" class="features-design">
+                            <h3>Realistic Scenarios</h3>
+                            <p>"Experience real-world cyber threats in a safe environment. Our scenarios are designed to help you recognize and respond to threats as they occur in the real world."
+                            </p>
+                        </div>
+                        <div id="f4" class="features-design">
+                            <h3>Progress Tracking</h3>
+                            <p>"Monitor your progress with personalized dashboards that show your strengths and areas for improvement. Stay on top of your learning journey with detailed analytics."
+                            </p>
+                        </div>
+                        <div id="f5" class="features-design">
+                            <h3>Expert Insights</h3>
+                            <p>"Gain access to up-to-date content created by cybersecurity experts. Stay informed about the latest threats and best practices in the industry
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        <!--.................... daily new section ............................................................ -->
+
+                    <div id="news">      
+                        <h2>Daily Cybersecurity News</h2>
+                        <section class="daily-news">
+                                
+                                <div id="news-container" class="news-container">
+                                    <!-- News articles will be dynamically inserted here -->
+                                </div>
+                        </section>
+                    </div>
+                        
+        </div>
+            
+
+        <!-- .................................sign-up page................................ -->
+         <!-- Sliding Login/Sign-Up Form -->
+    <div class="form-container" id="loginForm">
+        <div class="form-wrapper">
+            <!-- Login Form -->
+            <div class="form-box" id="loginBox">
+                <h2>Login</h2>
+                <form>
+                    <input type="text" placeholder="Username" required><br>
+                    <input type="password" placeholder="Password" required><br>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <span class="toggle-link" onclick="showSignUp()">Sign Up</span></p>
+            </div>
+
+            <!-- Sign-Up Form -->
+            <div class="form-box" id="signUpBox" style="display: none;">
+                <h2>Sign Up</h2>
+                <form>
+                    <input type="text" placeholder="Username" required><br>
+                    <input type="email" placeholder="Email" required><br>
+                    <input type="password" placeholder="Password" required><br>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <span class="toggle-link" onclick="showLogin()">Login</span></p>
+            </div>
+        </div>
+    </div>
+
+
+
+            <footer id="footer">
+           
+                <div class="footer-content">
+                    <div id="author">Made by-Zabiullah Khan</div>
+                    <p>Follow us on:</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/LDgzNuQYtNRz5GDP/?mibextid=qi2Omg" target="_blank" title="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.twitter.com/Zabii_2002" target="_blank" title="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/zabiullah_2002?igsh=ZHZxZXljanZ3NWJv target="_blank" title="Instagram">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                        <a href="http://www.youtube.com/@khabylameofficial363" target="_blank" title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        
+                    </div>
+                    <div id="copyright"><i class="fa-regular fa-copyright"></i><span>2024-Cyber Buddy </span></div>
+                </div>
+            </footer>
+
+            <script src="index.js"></script>
+            <script src="transition.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Simulation</title>
+    <link rel="stylesheet" href="sqli.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SQL Injection Attack Simulation</h1>
+        <div class="form-container">
+            <p>Try entering normal credentials or attempt an SQL injection to see what happens!</p>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username">
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password">
+                
+                <button type="submit" id="submitButton">Login</button>
+            </form>
+        </div>
+        
+        <div id="queryOutput">
+            <p><strong>SQL Query:</strong></p>
+            <pre id="sqlQuery">
+SELECT * FROM users WHERE username = 'user_input' AND password = 'password_input';
+            </pre>
+        </div>
+
+        <div id="result">
+            <h2>Result:</h2>
+            <p id="message"></p>
+        </div>
+
+        <div id="tips">
+            <h3>Tip:</h3>
+            <p id="tipContent">you can login without password if you know the username and website is prone to SQL Injection attack(try to login by entering  <u> "" or "1" </u>  in password field).</p>
+        </div>
+    </div>
+    
+    <footer>
+        <button onclick="restartSimulation()" id="restart" class="alert-btn">Restart Simulation</button><br><br>
+         <a href="../explore.html"><button id="HOME" class="alert-btn">HOME</button></a><br>
+    </footer>
+    <script src="sqli.js"></script>
+</body>
+</html>

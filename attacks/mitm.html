@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITM Attack Simulation</title>
+    <link rel="stylesheet" href="mitm.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Man-in-the-Middle (MITM) Attack Simulation</h1>
+
+        <!-- Simulated Browser Interface -->
+        <div id="browser-interface">
+            <div id="address-bar">
+                <span id="url">http://bank-secure.com</span>
+                <span id="security-status" class="secure">🔒 Secure</span>
+            </div>
+
+            <!-- Step 1: Connect to Wi-Fi -->
+            <div id="wifi-options">
+                <h2>Select a Wi-Fi Network:</h2>
+                <button onclick="chooseNetwork('open', false)">Open Public Wi-Fi</button>
+                <button onclick="chooseNetwork('secure', true)">Secure Wi-Fi (Password Required)</button>
+            </div>
+
+            <!-- Step 2: Actions Post Connection -->
+            <div id="post-connection" class="hidden">
+                <h2>What would you like to do?</h2>
+                <button onclick="navigateTo('bank')">Login to Bank</button>
+            </div>
+
+            <!-- Step 3: Bank Website with Fake Scenarios -->
+            <div id="website" class="hidden">
+                <h2>Bank Login</h2>
+                <p id="fake-warning" class="hidden">⚠️ Warning: This connection is not secure!</p>
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter Username">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter Password">
+                <button onclick="submitLogin()">Login</button>
+            </div>
+
+            <!-- Step 4: Bank Account Dashboard -->
+            <div id="account-dashboard" class="hidden">
+                <h2>Welcome to Your Bank Account</h2>
+                <p><b>Account Balance:</b> $10,500.00</p>
+                <h3>Recent Transactions</h3>
+                <ul>
+                    <li>$200.00 - Grocery Store</li>
+                    <li>$150.00 - Gas Station</li>
+                    <li>$500.00 - Salary Deposit</li>
+                </ul>
+                <button onclick="logout()">Logout</button>
+            </div>
+
+            <!-- Step 5: Outcomes -->
+            
+        </div>
+
+        <!-- Live Feedback -->
+        <!-- <div id="feedback">
+            <p><b>Security Choices:</b> <span id="score">0</span>/3</p>
+        </div> -->
+    </div>
+
+    <!-- Live Feedback -->
+    <div id="attacker-monitor" class="hidden">
+        <h2>Attacker View</h2>
+        <p id="intercepted-data">No data intercepted yet...</p>
+    </div>
+
+
+    <!-- Actions to be taken -->
+
+  <div id="action-section" style="display: none;">
+    <h3>💡 What Actions You Can Take Now!!!:</h3>
+    <ol type="1">
+      <li id="act1"><strong>Disconnect from the Network:</strong>
+     <ul>
+        <li>Immediately disconnect from the compromised network (e.g., public Wi-Fi) to stop the attacker’s access.</li>
+        <li>Switch to a secure, private network (e.g., home or mobile hotspot).</li>
+     </ul>
+     </li>
+      <li id="act2"><strong>Change Your Passwords:</strong> 
+        <ul>
+            <li>Change passwords for all accounts you were accessing while on the compromised network, particularly sensitive ones (e.g., email, bank)</li>
+            <li>Preferably, do this from a secure network or device.</li>
+        </ul>
+     </li>
+      <li id="act3"><strong>Enable Two-Factor Authentication (2FA)</strong> 
+            <ul>
+                <li>Set up two-factor authentication (2FA) for critical accounts. This adds an extra layer of protection in case login credentials were compromised.</li>
+            </ul>
+     </li>
+      <li id="act4"><strong>Verify SSL/TLS Certificates:</strong> 
+            <ul>
+                <li>Always check for HTTPS in the URL bar when transmitting sensitive information. If you notice any suspicious activity (e.g., SSL certificate errors or "not secure" warnings), stop using the website.</li>
+                <li>If a site you visited had a certificate warning, your session might have been intercepted.</li>
+            </ul>
+     </li>
+      <li id="act5"><strong>Check for DNS Hijacking:</strong>
+            <ul>
+                <li>Ensure that the DNS settings on your device haven’t been changed by the attacker. Use trusted DNS servers like Google DNS (8.8.8.8) or Cloudflare DNS (1.1.1.1).</li>
+                <li><strong>DNS Settings Command (Windows):</strong>Use <u>"ipconfig /all"</u> command to Check for rogue DNS entries and reset to a trusted DNS provider if needed.</li>
+            </ul>
+     </li>
+     <li id="act6"><strong>Clear Session Data and Cookies:</strong>
+            <ul>
+                <li>Log out from all web sessions and clear browser cookies to invalidate any session tokens the attacker might have captured.</li>
+                <li>For sensitive accounts (e.g., banking, email), log in again on a secure network.</li>
+            </ul>
+     </li>
+     <li id="act7"><strong>Monitor Account Activity:</strong>
+        <ul>
+            <li>Regularly monitor your bank accounts and other sensitive services for unauthorized activity, especially if you suspect login credentials were intercepted.</li>
+        </ul>
+     </li> 
+     <li id="act7"><strong>Scan for Malware:</strong> 
+            <ul>
+                <li>Run a full scan of your system using reputable antivirus or anti-malware software to ensure no malicious software or backdoors were installed during the attack.</li>
+            </ul>
+     </li>
+    </ol>
+    <br>
+    <h3>💡 Some Commands That can be Helpful:</h3>
+    <ol type="a">
+      <li><strong>Check ARP Cache (Linux/Windows):</strong>
+        <ol type="1">
+           <li>MITM attacks can manipulate ARP tables. Use the following command to check for suspicious entries:</li>
+            <li><strong>Windows:</strong>arp -a</li>
+            <li><strong>Mac:</strong>arp -n</li>
+       </ol>
+      </li>
+      <li><strong>Flush ARP Cache (Windows/Linux):</strong> To remove any potentially malicious ARP entries
+        <ol type="1">
+            <li><strong>Windows:</strong>netsh interface ip delete arpcache</li>
+            <li><strong>Mac:</strong>sudo ip -s -s neigh flush all</li>
+        </ol>
+      </li>
+      <li><strong>Checking SSL/TLS Details:</strong>Use tools like openssl to inspect SSL/TLS certificates
+        <ul>
+          <li>Use the <b>"openssl s_client -connect example.com:443"</b> command, This will show you the certificate details of the site to ensure you're communicating with the intended party.</li>
+        </ul>
+      </li>
+      <li><strong>Verify Network Connections (Linux/Windows):</strong> 
+        <ul>
+          <li>Use the <b>"netstat -an"</b> command to check for suspicious open connections.</li>
+        </ul>
+      </li>
+    </ol>
+    <br>
+    <h3>💡 Future Precautions:</h3>
+    <ol type="a">
+        <li><strong>Use VPN for Future Connections:</strong>
+          <ul>
+             <li>Always use a Virtual Private Network (VPN) when accessing sensitive services, especially on public or untrusted networks. A VPN encrypts your traffic and makes it harder for attackers to intercept.</li>
+         </ul>
+        </li>
+        <li><strong>Avoid Public Wi-Fi for Sensitive Transactions:</strong> 
+          <ul>
+              <li>Use secure networks or a VPN when conducting sensitive activities.</li>
+          </ul>
+        </li>
+        <li><strong>Network Segmentation:</strong>
+          <ul>
+            <li>For businesses, use network segmentation to separate sensitive data from other network traffic, limiting exposure.</li>
+          </ul>
+        </li>
+        <li><strong>Use HTTPS Everywhere:</strong> 
+          <ul>
+            <li>Always verify that websites use HTTPS to encrypt communications. Install browser extensions like "HTTPS Everywhere."</li>
+          </ul>
+        </li>
+      </ol>
+  </div>
+
+
+
+
+    <footer>
+        <button onclick="restartSimulation()" id="restart">Restart Simulation</button><br>
+          <a href="../explore.html"><button id="HOME">HOME</button></a>
+    </footer>
+
+    <script src="mitm.js"></script>
+</body>
+</html>
