@@ -1,10 +1,4 @@
-Here's a **more detailed and polished `README.md`** for your **CyberBuddy** project, based *strictly* on your uploaded PDF report and project structure. It avoids anything unrelated like drivers/depot dashboards and focuses purely on the **cybersecurity awareness website**.
 
----
-
-## ✅ Final Detailed `README.md` for CyberBuddy
-
-```markdown
 # 🛡️ CyberBuddy
 
 > **CyberBuddy** is an interactive cybersecurity awareness website built to educate users on various types of cyber attacks and how to defend against them using **realistic simulations**, **gamified learning**, and **interactive choices**.
